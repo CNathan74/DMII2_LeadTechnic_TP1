@@ -1,6 +1,8 @@
+require('dotenv').config()
 const express = require('express');
 const favicon = require('serve-favicon');
 const path = require('path');
+require('./subscriber')
 
 const app = express();
 
@@ -21,5 +23,4 @@ require('./route')(app);
 const port = process.env.PORT || 3000;
 app.server = app.listen(port);
 console.log(`listening on port ${port}`);
-
 module.exports = app;

@@ -37,6 +37,10 @@ function route(app) {
         return res.status(500).send({ error });
       });
   });
+  app.post('/zip', (req, res) => {
+    const zip = generateZipForPath(req.path);
+    res.send(zip);
+  });
 }
 
 module.exports = route;
